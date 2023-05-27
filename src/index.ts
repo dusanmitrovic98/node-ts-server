@@ -1,4 +1,5 @@
 import express, { Express, Request, Response } from 'express';
+import path from 'path';
 
 const app: Express = express();
 const PORT: number = 3000;
