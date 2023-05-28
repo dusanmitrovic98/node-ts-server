@@ -11,8 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 const options = {
-    key: fs.readFileSync('path/to/private.key'),
-    cert: fs.readFileSync('path/to/certificate.crt'),
+    key: fs.readFileSync('./ssl/private.key'),
+    cert: fs.readFileSync('./ssl/certificate.crt'),
   };
 
 app.get(
