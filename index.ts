@@ -1,6 +1,7 @@
 import express, { Application, Request, Response } from "express";
 import { PORT, IP_ADDRESS } from "./public/utility/constants/server";
 import * as path from "path"
+import fs from 'fs';
 
 const app: Application = express();
 
@@ -8,6 +9,11 @@ const app: Application = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
+
+const options = {
+    key: fs.readFileSync('path/to/private.key'),
+    cert: fs.readFileSync('path/to/certificate.crt'),
+  };
 
 app.get(
     "/",

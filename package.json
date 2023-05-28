@@ -4,7 +4,9 @@
   "description": "Node.js, TypeScript and Express server.",
   "main": "index.ts",
   "scripts": {
-    "start": "ts-node-dev ./index.ts"
+    "build": "tsc",
+    "start": "node ./dist/index.js",
+    "dev": "ts-node-dev ./index.ts"
   },
   "keywords": [],
   "author": "",
