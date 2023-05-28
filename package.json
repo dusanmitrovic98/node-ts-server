@@ -2,7 +2,7 @@
   "name": "ts-server",
   "version": "1.0.0",
   "description": "Node.js, TypeScript and Express server.",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "start": "ts-node-dev ./index.ts"
   },
