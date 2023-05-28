@@ -1,5 +1,5 @@
 import express, { Application, Request, Response } from "express";
-import { PORT } from "./public/utility/constants/server";
+import { PORT, IP_ADDRESS } from "./public/utility/constants/server";
 import * as path from "path"
 
 const app: Application = express();
@@ -17,8 +17,8 @@ app.get(
 );
 
 try {
-    app.listen(PORT, ipv4 + "", (): void => {
-        console.log(`Server url: https://${ipv4}:${PORT}`);
+    app.listen(PORT, IP_ADDRESS + "", (): void => {
+        console.log(`Server url: https://${IP_ADDRESS}:${PORT}`);
     });
 } catch (error) {
     console.error(`Error occurred: ${error}`);
