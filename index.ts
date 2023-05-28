@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const options = {
     key: fs.readFileSync('./ssl/private.key'),
-    cert: fs.readFileSync('./ssl/certificate.crt'),
+    cert: fs.readFileSync('./ssl/csr.pem'),
   };
 
 app.get(
