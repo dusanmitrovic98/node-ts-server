@@ -1,6 +1,6 @@
 import { networkInterfaces } from 'os';
 
-function getIPv4Address(): string | undefined {
+function getIPv4Address(): string {
   const interfaces = networkInterfaces();
 
   for (const interfaceName of Object.keys(interfaces)) {
@@ -14,7 +14,7 @@ function getIPv4Address(): string | undefined {
     }
   }
 
-  return undefined;
+  return "localhost";
 }
 
 export const ipv4 = getIPv4Address();
