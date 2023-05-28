@@ -2,7 +2,6 @@ import express, { Application, Request, Response } from "express";
 import * as path from "path"
 
 const app: Application = express();
-const PORT = 3000;
 
 // Body parsing Middleware
 app.use(express.json());
