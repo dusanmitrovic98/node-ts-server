@@ -1,0 +1,2 @@
+import { networkInterfaces } from 'os';
+
