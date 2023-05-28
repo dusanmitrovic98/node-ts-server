@@ -1,4 +1,5 @@
 import express, { Application, Request, Response } from "express";
+import * as path from "path"
 
 const app: Application = express();
 const port = 3000;
@@ -6,13 +7,12 @@ const port = 3000;
 // Body parsing Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get(
     "/",
-    async (req: Request, res: Response): Promise<Response> => {
-        return res.status(200).send({
-            message: "Hello World!",
-        });
+    async (req: Request, res: Response) => {
+        res.sendFile(path.join(__dirname, 'public', 'index.html'));
     }
 );
 
