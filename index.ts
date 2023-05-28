@@ -20,6 +20,7 @@ app.get(
 try {
     app.listen(port, (): void => {
         console.log(`Connected successfully on port ${port}`);
+        console.log(`Server url: https:// ${ipv4}:`);
     });
 } catch (error) {
     console.error(`Error occurred: ${error}`);
