@@ -10,3 +10,4 @@ export const RELATIVE_PATH_VIEW_INDEX: string = "./views/index.html";
 
 // SSl
 export const SSL_KEY: string = "./ssl/private.key";
+export const SSL_CERT: string = "./ssl/certificate.crt";
