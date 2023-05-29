@@ -1,5 +1,5 @@
+import { PORT, IP_ADDRESS } from "./public/utility/constants/server/server";
 import express, { Application, Request, Response } from "express";
-import { PORT, IP_ADDRESS } from "./public/utility/constants/server";
 import * as path from "path"
 import https from 'https';
 import fs from 'fs';
@@ -19,7 +19,7 @@ const options = {
 app.get(
     "/",
     async (req: Request, res: Response) => {
-        res.sendFile(path.join(__dirname, 'public', 'index.html'));
+        res.sendFile(path.join(__dirname, 'public', './views/index.html'));
     }
 );
 
