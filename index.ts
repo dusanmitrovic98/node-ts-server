@@ -1,4 +1,4 @@
-import { PORT, IP_ADDRESS } from "./public/utility/constants/server";
+import { PORT, IP_ADDRESS, DIRECTORY_PUBLIC } from "./public/utility/constants/server";
 import express, { Application, Request, Response } from "express";
 import * as path from "path"
 import https from 'https';
