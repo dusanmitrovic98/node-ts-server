@@ -9,3 +9,4 @@ export const DIRECTORY_NAME_PUBLIC: string = "public";
 export const RELATIVE_PATH_VIEW_INDEX: string = "./views/index.html";
 
 // SSl
+export const SSL_KEY: string = "./ssl/private.key";
