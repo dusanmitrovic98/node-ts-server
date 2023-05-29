@@ -6,7 +6,6 @@ import fs from 'fs';
 
 const app: Application = express();
 
-// Body parsing Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
