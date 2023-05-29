@@ -1,4 +1,4 @@
-import { PORT, IP_ADDRESS, DIRECTORY_NAME_PUBLIC, RELATIVE_PATH_VIEW_INDEX, SSL_KEY, SSL_CERT } from "./public/utility/constants/server";
+import { PORT, IP_ADDRESS, DIRECTORY_NAME_PUBLIC, PATH_VIEW_INDEX, PATH_SSL_KEY, PATH_SSL_CERT } from "./public/utility/constants/server";
 import express, { Application, Request, Response } from "express";
 import * as path from "path"
 import https from 'https';
@@ -11,8 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, DIRECTORY_NAME_PUBLIC)));
 
 const options = {
-    key: fs.readFileSync(SSL_KEY),
-    cert: fs.readFileSync(SSL_CERT),
+    key: fs.readFileSync(PATH_SSL_KEY),
+    cert: fs.readFileSync(PATH_SSL_CERT),
   };
 
 app.get(
