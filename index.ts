@@ -18,7 +18,7 @@ const options = {
 app.get(
     "/",
     async (req: Request, res: Response) => {
-        res.sendFile(path.join(__dirname, DIRECTORY_NAME_PUBLIC, RELATIVE_PATH_VIEW_INDEX));
+        res.sendFile(path.join(__dirname, DIRECTORY_NAME_PUBLIC, PATH_VIEW_INDEX));
     }
 );
 
