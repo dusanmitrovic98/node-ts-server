@@ -1,4 +1,4 @@
-import { PORT, IP_ADDRESS, DIRECTORY_PUBLIC } from "./public/utility/constants/server";
+import { PORT, IP_ADDRESS, DIRECTORY_NAME_PUBLIC } from "./public/utility/constants/server";
 import express, { Application, Request, Response } from "express";
 import * as path from "path"
 import https from 'https';
@@ -8,7 +8,7 @@ const app: Application = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, DIRECTORY_PUBLIC)));
+app.use(express.static(path.join(__dirname, DIRECTORY_NAME_PUBLIC)));
 
 const options = {
     key: fs.readFileSync('./ssl/private.key'),
@@ -18,7 +18,7 @@ const options = {
 app.get(
     "/",
     async (req: Request, res: Response) => {
-        res.sendFile(path.join(__dirname, DIRECTORY_PUBLIC, './views/index.html'));
+        res.sendFile(path.join(__dirname, DIRECTORY_NAME_PUBLIC, './views/index.html'));
     }
 );
 
