@@ -1,4 +1,4 @@
-import { IP_ADDRESS, DIRECTORY_SOURCE, PATH_VIEW_INDEX, PATH_SSL_KEY, PATH_SSL_CERT } from "./src/utility/constants/server";
+import { IP_ADDRESS, DEFAULT_PORT, DIRECTORY_SOURCE, PATH_VIEW_INDEX, PATH_SSL_KEY, PATH_SSL_CERT } from "./src/utility/constants/server";
 import express, { Application, Request, Response } from "express";
 import * as path from "path"
 import dotenv from "dotenv";
@@ -28,7 +28,7 @@ app.get(
 );
 
 try {
-    let PORT: number = parseInt(process.env.PORT || '3000', 10);
+    let PORT: number = parseInt(process.env.PORT || DEFAULT_PORT, 10);
 
     https.createServer(options, app).listen(PORT, IP_ADDRESS + "", (): void => {
         console.log(`Server url: https://${IP_ADDRESS}:${PORT}`);
