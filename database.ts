@@ -19,5 +19,7 @@ export async function connectDatabase(): Promise<void> {
 }
 
 export function getDatabase(): Db {
+  if (!db) {
+  }
   return db;
 }
