@@ -9,5 +9,6 @@ export async function connectDatabase(): Promise<void> {
   const client = new MongoClient(url);
 
   try {
+    await client.connect();
   } catch (error) {}
 }
