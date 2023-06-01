@@ -4,6 +4,7 @@ import fs from "fs";
 
 import { PATH_SSL_KEY, PATH_SSL_CERT } from "./src/utility/constants/const-ssl";
 import { serverConfig } from "./configuration/config-server";
+import { connectDatabase } from "./database";
 import app from "./src/app";
 
 dotenv.config();
@@ -12,6 +13,8 @@ const options = {
   key: fs.readFileSync(PATH_SSL_KEY),
   cert: fs.readFileSync(PATH_SSL_CERT),
 };
+
+connectDatabase();
 
 const server: https.Server = https.createServer(options, app);
 
