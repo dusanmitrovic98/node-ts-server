@@ -7,7 +7,7 @@ import {
   DEFAULT_PORT,
   PATH_SSL_KEY,
   PATH_SSL_CERT,
-} from "./src/utility/constants/server";
+} from "./src/utility/constants/server-constants";
 import app from "./src/app";
 
 dotenv.config();
