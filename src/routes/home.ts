@@ -5,3 +5,5 @@ const router: Router = express.Router();
 router.get("/", (req: Request, res: Response) => {
   res.send({ message: "Hello World!" });
 });
+
+export default router;
