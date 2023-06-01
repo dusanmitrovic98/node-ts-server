@@ -22,3 +22,5 @@ server.on("error", (error: Error) => {
 server.listen(serverConfig.port, serverConfig.ipAddress, () => {
   console.log(`Server: https://${serverConfig.ipAddress}:${serverConfig.port}`);
 });
+
+//
