@@ -13,6 +13,8 @@ import {
   PATH_SSL_CERT,
 } from "./src/utility/constants/server";
 
+import requestLogger from "./src/middleware/request-logger";
+
 import homeRouter from "./src/routes/home";
 
 dotenv.config();
@@ -30,6 +32,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, DIRECTORY_SOURCE)));
+
+// Middleware
+app.use(requestLogger);
 
 // Routes
 app.use("/", homeRouter);
