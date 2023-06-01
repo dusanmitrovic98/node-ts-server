@@ -6,7 +6,6 @@ export const DEFAULT_PORT: string = "3000";
 
 // Directories
 export const DIRECTORY_SOURCE: string = "src";
-export const PATH_VIEW_INDEX: string = "./views/index.html";
 
 // SSl
 export const PATH_SSL_KEY: string = "./ssl/private.key";
