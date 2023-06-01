@@ -31,15 +31,6 @@ app.get("/", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, DIRECTORY_SOURCE, PATH_VIEW_INDEX));
 });
 
-// try {
-//     let PORT: number = parseInt(process.env.PORT || DEFAULT_PORT, 10);
-
-//     https.createServer(options, app).listen(PORT, IP_ADDRESS + "", (): void => {
-//         console.log(`Server url: https://${IP_ADDRESS}:${PORT}`);
-//     });
-// } catch (error) {
-//     console.error(`Error occurred: ${error}`);
-// }
 let PORT: number = parseInt(process.env.PORT || DEFAULT_PORT);
 const server = https.createServer(options, app);
 
