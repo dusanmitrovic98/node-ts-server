@@ -28,12 +28,11 @@ const app: Application = express();
 const server: https.Server = https.createServer(options, app);
 const PORT: number = parseInt(process.env.PORT || DEFAULT_PORT);
 
+// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, DIRECTORY_SOURCE)));
-
-// Middleware
 app.use(requestLogger);
 
 // Routes
