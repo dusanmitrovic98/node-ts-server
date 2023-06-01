@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, DIRECTORY_SOURCE)));
 
 app.get("/", (req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname, DIRECTORY_SOURCE, PATH_VIEW_INDEX));
+  res.send({ message: "Hello World!" });
 });
 
 server.on("error", (error: Error) => {
