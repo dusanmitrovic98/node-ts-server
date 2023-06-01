@@ -12,5 +12,7 @@ export async function connectDatabase(): Promise<void> {
     await client.connect();
     console.log("Connected to MongoDB");
     db = client.db(dbName);
-  } catch (error) {}
+  } catch (error) {
+    console.error("Error connecting to MongoDB:", error);
+  }
 }
