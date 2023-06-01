@@ -3,7 +3,7 @@ import https from "https";
 import fs from "fs";
 
 import {
-  IP_ADDRESS,
+  DEFAULT_IP_ADDRESS,
   DEFAULT_PORT,
   PATH_SSL_KEY,
   PATH_SSL_CERT,
@@ -24,6 +24,6 @@ server.on("error", (error: Error) => {
   console.error(`An error occurred: ${error}`);
 });
 
-server.listen(PORT, IP_ADDRESS, () => {
-  console.log(`Server URL: https://${IP_ADDRESS}:${PORT}`);
+server.listen(PORT, DEFAULT_IP_ADDRESS, () => {
+  console.log(`Server URL: https://${DEFAULT_IP_ADDRESS}:${PORT}`);
 });
