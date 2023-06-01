@@ -1,10 +1,17 @@
-import { IP_ADDRESS, DEFAULT_PORT, DIRECTORY_SOURCE, PATH_VIEW_INDEX, PATH_SSL_KEY, PATH_SSL_CERT } from "./src/utility/constants/server";
+import {
+  IP_ADDRESS,
+  DEFAULT_PORT,
+  DIRECTORY_SOURCE,
+  PATH_VIEW_INDEX,
+  PATH_SSL_KEY,
+  PATH_SSL_CERT,
+} from "./src/utility/constants/server";
 import express, { Application, Request, Response } from "express";
-import * as path from "path"
+import * as path from "path";
 import dotenv from "dotenv";
-import https from 'https';
+import https from "https";
 import cors from "cors";
-import fs from 'fs';
+import fs from "fs";
 
 dotenv.config();
 
@@ -16,12 +23,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, DIRECTORY_SOURCE)));
 
 const options = {
-    key: fs.readFileSync(PATH_SSL_KEY),
-    cert: fs.readFileSync(PATH_SSL_CERT),
-  };
+  key: fs.readFileSync(PATH_SSL_KEY),
+  cert: fs.readFileSync(PATH_SSL_CERT),
+};
 
-app.get('/', (req: Request, res: Response) => {
-    res.sendFile(path.join(__dirname, DIRECTORY_SOURCE, PATH_VIEW_INDEX));
+app.get("/", (req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, DIRECTORY_SOURCE, PATH_VIEW_INDEX));
 });
 
 // try {
@@ -35,3 +42,7 @@ app.get('/', (req: Request, res: Response) => {
 // }
 
 const server = https.createServer(options, app);
+
+server.on("error", (error: Error) => {
+  console.error(`An error occurred: ${error}`);
+});
