@@ -21,7 +21,7 @@ const options = {
 };
 
 const app: Application = express();
-const server = https.createServer(options, app);
+const server: https.Server = https.createServer(options, app);
 const PORT: number = parseInt(process.env.PORT || DEFAULT_PORT);
 
 app.use(cors());
