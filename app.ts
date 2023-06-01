@@ -33,3 +33,5 @@ app.get('/', (req: Request, res: Response) => {
 // } catch (error) {
 //     console.error(`Error occurred: ${error}`);
 // }
+
+const server = https.createServer(options, app);
