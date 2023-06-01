@@ -5,8 +5,8 @@
   "main": "app.ts",
   "scripts": {
     "build": "tsc",
-    "start": "node ./dist/app.js",
-    "dev": "ts-node-dev ./app.ts"
+    "start": "node ./dist/server.js",
+    "dev": "ts-node-dev ./server.ts"
   },
   "keywords": [],
   "author": "",
