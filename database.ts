@@ -20,6 +20,7 @@ export async function connectDatabase(): Promise<void> {
 
 export function getDatabase(): Db {
   if (!db) {
+    throw new Error("Database not initialized");
   }
   return db;
 }
