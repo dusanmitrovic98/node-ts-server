@@ -2,7 +2,7 @@ import express, { Application } from "express";
 import * as path from "path";
 import cors from "cors";
 
-import { DIRECTORY_NAME_SOURCE } from "./utility/constants/path-constants";
+import { DIRECTORY_NAME_SOURCE } from "./utility/constants/const-path";
 
 import loggerResponse from "./middleware/logger-response";
 import loggerRequest from "./middleware/logger-request";
