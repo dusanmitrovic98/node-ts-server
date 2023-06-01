@@ -8,7 +8,6 @@ import {
   IP_ADDRESS,
   DEFAULT_PORT,
   DIRECTORY_SOURCE,
-  PATH_VIEW_INDEX,
   PATH_SSL_KEY,
   PATH_SSL_CERT,
 } from "./src/utility/constants/server";
