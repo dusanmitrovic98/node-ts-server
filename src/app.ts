@@ -4,8 +4,8 @@ import cors from "cors";
 
 import { DIRECTORY_NAME_SOURCE } from "./utility/constants/path-constants";
 
-import responseLogger from "./middleware/response-logger";
-import requestLogger from "./middleware/request-logger";
+import loggerResponse from "./middleware/logger-response";
+import loggerRequest from "./middleware/logger-request";
 
 import homeRouter from "./routes/home";
 
@@ -16,8 +16,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, DIRECTORY_NAME_SOURCE)));
-app.use(responseLogger);
-app.use(requestLogger);
+app.use(loggerResponse);
+app.use(loggerRequest);
 
 // Routes
 app.use("/", homeRouter);

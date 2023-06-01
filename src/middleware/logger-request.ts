@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 
-const requestLogger = (
+const loggerRequest = (
   req: Request,
   res: Response,
   next: NextFunction
@@ -17,4 +17,4 @@ const requestLogger = (
   next();
 };
 
-export default requestLogger;
+export default loggerRequest;

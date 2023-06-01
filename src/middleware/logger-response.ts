@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction, Send } from "express";
 
-const responseLogger = (req: Request, res: Response, next: NextFunction) => {
+const loggerResponse = (req: Request, res: Response, next: NextFunction) => {
   const originalSend: Send = res.send;
 
   res.send = function (body?: any): any {
@@ -15,4 +15,4 @@ const responseLogger = (req: Request, res: Response, next: NextFunction) => {
   next();
 };
 
-export default responseLogger;
+export default loggerResponse;
