@@ -5,9 +5,11 @@ import fs from "fs";
 import {
   DEFAULT_IP_ADDRESS,
   DEFAULT_PORT,
+} from "./src/utility/constants/server-constants";
+import {
   PATH_SSL_KEY,
   PATH_SSL_CERT,
-} from "./src/utility/constants/server-constants";
+} from "./src/utility/constants/ssl-constants";
 import app from "./src/app";
 
 dotenv.config();
