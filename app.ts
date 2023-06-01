@@ -15,24 +15,23 @@ import fs from "fs";
 
 dotenv.config();
 
+const options = {
+  key: fs.readFileSync(PATH_SSL_KEY),
+  cert: fs.readFileSync(PATH_SSL_CERT),
+};
+
 const app: Application = express();
+const server = https.createServer(options, app);
+const PORT: number = parseInt(process.env.PORT || DEFAULT_PORT);
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, DIRECTORY_SOURCE)));
 
-const options = {
-  key: fs.readFileSync(PATH_SSL_KEY),
-  cert: fs.readFileSync(PATH_SSL_CERT),
-};
-
 app.get("/", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, DIRECTORY_SOURCE, PATH_VIEW_INDEX));
 });
-
-const PORT: number = parseInt(process.env.PORT || DEFAULT_PORT);
-const server = https.createServer(options, app);
 
 server.on("error", (error: Error) => {
   console.error(`An error occurred: ${error}`);
