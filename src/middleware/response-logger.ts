@@ -4,4 +4,6 @@ const responseLogger = (
   req: Request,
   res: Response,
   next: NextFunction
-): void => {};
+): void => {
+  const originalSend = res.send;
+};
