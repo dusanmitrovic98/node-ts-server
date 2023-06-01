@@ -39,6 +39,7 @@ app.use(requestLogger);
 // Routes
 app.use("/", homeRouter);
 
+// Server
 server.on("error", (error: Error) => {
   console.error(`An error occurred: ${error}`);
 });
