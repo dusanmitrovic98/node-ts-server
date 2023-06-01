@@ -40,9 +40,13 @@ app.get("/", (req: Request, res: Response) => {
 // } catch (error) {
 //     console.error(`Error occurred: ${error}`);
 // }
-
+let PORT: number = parseInt(process.env.PORT || DEFAULT_PORT);
 const server = https.createServer(options, app);
 
 server.on("error", (error: Error) => {
   console.error(`An error occurred: ${error}`);
+});
+
+server.listen(PORT, IP_ADDRESS, () => {
+  console.log(`Server URL: https://${IP_ADDRESS}:${PORT}`);
 });
