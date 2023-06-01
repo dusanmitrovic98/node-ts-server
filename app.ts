@@ -11,6 +11,7 @@ import {
   PATH_SSL_KEY,
   PATH_SSL_CERT,
 } from "./src/utility/constants/server";
+import homeRouter from "./src/routes/home";
 
 dotenv.config();
 
@@ -29,6 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, DIRECTORY_SOURCE)));
 
 // Routes
+app.use("/", homeRouter);
 
 server.on("error", (error: Error) => {
   console.error(`An error occurred: ${error}`);
