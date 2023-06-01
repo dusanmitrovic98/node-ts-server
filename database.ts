@@ -10,5 +10,6 @@ export async function connectDatabase(): Promise<void> {
 
   try {
     await client.connect();
+    console.log("Connected to MongoDB");
   } catch (error) {}
 }
