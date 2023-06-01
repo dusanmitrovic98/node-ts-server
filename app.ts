@@ -14,6 +14,7 @@ import {
 } from "./src/utility/constants/server";
 
 import requestLogger from "./src/middleware/request-logger";
+import responseLogger from "./src/middleware/response-logger";
 
 import homeRouter from "./src/routes/home";
 
@@ -34,6 +35,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, DIRECTORY_SOURCE)));
 app.use(requestLogger);
+app.use(responseLogger);
 
 // Routes
 app.use("/", homeRouter);
