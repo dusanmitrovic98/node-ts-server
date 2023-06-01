@@ -1,6 +1,5 @@
 import express, { Application } from "express";
 import * as path from "path";
-import dotenv from "dotenv";
 import cors from "cors";
 
 import { DIRECTORY_SOURCE } from "./utility/constants/server";
@@ -9,8 +8,6 @@ import requestLogger from "./middleware/request-logger";
 import responseLogger from "./middleware/response-logger";
 
 import homeRouter from "./routes/home";
-
-dotenv.config();
 
 const app: Application = express();
 
