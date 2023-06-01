@@ -20,12 +20,9 @@ const options = {
     cert: fs.readFileSync(PATH_SSL_CERT),
   };
 
-app.get(
-    "/",
-    async (req: Request, res: Response) => {
-        res.sendFile(path.join(__dirname, DIRECTORY_SOURCE, PATH_VIEW_INDEX));
-    }
-);
+app.get('/', (req: Request, res: Response) => {
+    res.sendFile(path.join(__dirname, DIRECTORY_SOURCE, PATH_VIEW_INDEX));
+});
 
 try {
     let PORT: number = parseInt(process.env.PORT || DEFAULT_PORT, 10);
